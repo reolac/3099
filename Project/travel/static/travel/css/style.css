@@ -1,0 +1,43 @@
+/* GLOBAL */
+body {
+    background-color: #0E6EB8;
+}
+
+a {
+    color: #1B1C1D;
+}
+
+/*HOME PAGE*/
+.index_Title {
+    width: 19%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.description{
+    position: absolute;
+    margin-left: 5%;
+}
+
+.results_Weather{
+    position: absolute;
+    margin-left: 80%;
+}
+
+
+.section1 {
+    position: absolute;
+    margin-left: 25%;
+    width: 50%;
+}
+
+#map{
+border: 5px solid #000000;
+overflow:hidden;
+border-radius:999px;
+-moz-border-radius:999px;
+-webkit-border-radius:999px;
+-o-border-radius:999px;
+position:fixed;
+}

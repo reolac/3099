@@ -1,0 +1,138 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'travel/semantic/dist/semantic.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'travel/css/style.css' %}"/>
+<script src="{% static 'travel/js/sorttable.js' %}"></script>
+
+<div class="header_Container">
+    <button class="ui secondary button">Login</button>
+    <button class="ui primary button">Sign-Up</button>
+
+    <div class="ui divider"></div>
+</div>
+
+<div class="index_Title">
+
+    <img src="{% static 'travel/src/logo.png' %}">
+</div>
+
+<div class="section1">
+
+    <div class="ui blue attached segment">
+  <h1><center>Cinema locations in the United Kingdom</center></h1>
+</div>
+
+    <div class="ui horizontal segments">
+
+        <div class="ui inverted blue segment">
+
+
+
+            <table class="ui sortable inverted blue table">
+
+                <tbody>
+                {% for location in location_list1 %}
+                    <tr>
+                        <td>{{ location.location }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <div class="ui inverted blue segment">
+
+
+            <table class="ui sortable inverted blue table">
+
+                <tbody>
+                {% for location in location_list2 %}
+                    <tr>
+                        <td>{{ location.location }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="ui inverted blue segment">
+
+
+
+            <table class="ui sortable inverted blue table">
+
+                <tbody>
+                {% for location in location_list3 %}
+                    <tr>
+                        <td>{{ location.location }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="ui inverted blue segment">
+
+
+
+
+            <table class="ui sortable inverted blue table">
+
+                <tbody>
+                {% for location in location_list4 %}
+                    <tr>
+                        <td>{{ location.location }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="ui inverted blue segment">
+
+
+
+
+            <table class="ui sortable inverted blue table">
+
+                <tbody>
+                {% for location in location_list5 %}
+                    <tr>
+                        <td>{{ location.location }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="ui inverted blue segment">
+
+
+
+
+            <table class="ui sortable inverted blue table">
+
+                <tbody>
+                {% for location in location_list6 %}
+                    <tr>
+                        <td>{{ location.location }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

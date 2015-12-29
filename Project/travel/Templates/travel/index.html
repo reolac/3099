@@ -1,0 +1,82 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'travel/semantic/dist/semantic.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'travel/css/style.css' %}"/>
+
+<div class="header_Container">
+    <button class="ui secondary button">Login</button>
+    <button class="ui primary button">Sign-Up</button>
+    <div class="ui divider"></div>
+</div>
+
+<div class="index_Title">
+    <img src="{% static 'travel/src/logo.png' %}">
+
+    <div class="search_Box">
+        <form class="ui massive icon input" action="results">
+            <input type="text" name="location" placeholder="Search...">
+            <i type="button" class="search icon"></i>
+        </form>
+    </div>
+
+</div>
+
+
+<div class="section1">
+
+    <div class="ui divider"></div>
+
+    <div class="ui three column very relaxed grid">
+
+        <div class="column">
+            <h4 class="ui orange center aligned top attached header">Recently Updated:</h4>
+            <div class = "ui attached orange inverted segment">
+            {% if latest_venue_list %}
+                    {% for venue in latest_venue_list %}
+                        <center><a href="{{ venue.id }}">{{ venue.venue_Name }}</a></center>
+                    {% endfor %}
+
+            {% else %}
+                <p>No venue's are available.</p>
+            {% endif %}
+            </div>
+        </div>
+
+
+        <div class="ui vertical divider"></div>
+
+        <div class="column">
+            <h4 class="ui violet center aligned top attached header">Highest Rated:</h4>
+            <div class = "ui attached violet inverted segment">
+            {% if rated_venue_list %}
+                    {% for venue in rated_venue_list %}
+                        <center><a href="{{ venue.id }}">{{ venue.venue_Name }}</a></center>
+                    {% endfor %}
+
+            {% else %}
+                <p>No venue's are available.</p>
+            {% endif %}
+            </div>
+        </div>
+        <div class="ui vertical divider"></div>
+
+        <div class="column">
+            <h4 class="ui green center aligned top attached header">Random Selection:</h4>
+            <div class = "ui attached green inverted segment">
+            {% if random_venue_list %}
+                    {% for venue in random_venue_list %}
+                        <center><a href="{{ venue.id }}">{{ venue.venue_Name }}</a></center>
+                    {% endfor %}
+
+            {% else %}
+                <1>No venue's are available.</1>
+            {% endif %}
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+

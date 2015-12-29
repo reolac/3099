@@ -1,0 +1,44 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'travel/semantic/dist/semantic.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'travel/css/style.css' %}"/>
+<script src="{% static 'travel/js/sorttable.js' %}"></script>
+
+<div class="header_Container">
+    <button class="ui secondary button">Login</button>
+    <button class="ui primary button">Sign-Up</button>
+
+    <div class="ui divider"></div>
+</div>
+
+<div class="index_Title">
+
+    <img src="{% static 'travel/src/logo.png' %}">
+</div>
+
+<div class="section1">
+    <div class="ui segments">
+        <div class="ui tall stacked segment">
+            <h2 class="ui header">{{ venue.venue_Name }} :: <u><a href="{{ venue.venue_Site }}"/>{{ venue.venue_Site }}</u></h2>
+
+            <img src="{{ venue.venue_Logo }}" width="200"/>
+        </div>
+
+    <div class="ui horizontal segments">
+        <div class="ui tall stacked grey inverted segment">
+            <h4 class="ui header"><center>Category: {{ venue.venue_Category }}</center></h4>
+            <h4 class="ui header"><center>Screen/Seats: {{ venue.venue_Description }}</center></h4>
+            <h4 class="ui header"><center>Rating: {{ venue.venue_Rating }}</center></h4>
+            <h4 class="ui header"><center>Website: {{ venue.venue_Site }}</center></h4>
+        </div>
+        <div class="ui tall stacked grey inverted segment">
+            <h4 class="ui header"><center>Location: {{ venue.venue_Location }}</center></h4>
+            <center><iframe width="300" height="300" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?q=place_id:{{ place_id }}&key=AIzaSyB23x3GWNpkgQ0Thxhk_XYMwmcYxGQmLEY"></iframe></center>
+        </div>
+    </div>
+
+    </div>
+
+
+</div>

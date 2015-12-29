@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Django default" uuid="60ed363b-44c7-4266-80be-1367b38dd71a">
+      <user-name>postgres</user-name>
+      <user-password>dfdddfcbdfc6dfc1dfcbdfc6dfc5dfc4dfcf</user-password>
+      <schema-pattern>facilator.pg_catalog facilator.public</schema-pattern>
+      <default-schemas>facilator.public</default-schemas>
+    </data-source>
+  </component>
+</project>

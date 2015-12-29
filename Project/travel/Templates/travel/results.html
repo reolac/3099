@@ -1,0 +1,109 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'travel/semantic/dist/semantic.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'travel/css/style.css' %}"/>
+<script src="{% static 'travel/js/sorttable.js' %}"></script>
+
+<div class="header_Container">
+    <button class="ui secondary button">Login</button>
+    <button class="ui primary button">Sign-Up</button>
+
+    <div class="ui divider"></div>
+</div>
+
+<div class="index_Title">
+
+    <img src="{% static 'travel/src/logo.png' %}">
+</div>
+
+<div class="description">
+
+    <div class="ui inverted blue raised segment">
+        <iframe width="300" height="300" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?q=place_id:{{ place_id }}&key=AIzaSyB23x3GWNpkgQ0Thxhk_XYMwmcYxGQmLEY"></iframe>
+    </div>
+</div>
+
+
+<div class="section1">
+
+<div class="ui segment">
+  <p>Bangor is a city in the county of Gwynedd. The city is one of the smallest in Wales with a population of around 13000 - not taking into considertion the 10000 plus ...</p>
+</div>
+
+    <div class="ui divider"></div>
+
+
+    <table class="ui sortable inverted blue table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Rating</th>
+            <th>Updated</th>
+            <th>Owner</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if latest_venue_list %}
+            {% for venue in latest_venue_list %}
+                <tr>
+                    <td><a class="ui black header" href="../{{ venue.id }}">{{ venue.venue_Name }}</a>
+                    </td>
+                    <td>{{ venue.venue_Location }}</td>
+                    <td>{{ venue.venue_Description }}</td>
+                    <td>{{ venue.venue_Category }}</td>
+                    <td>{{ venue.venue_Rating }}</td>
+                    <td>{{ venue.venue_Updated }}</td>
+                    <td>{{ venue.venue_Owner }}</td>
+                </tr>
+            {% endfor %}
+
+        {% else %}
+            <p>No venue's are available.</p>
+        {% endif %}
+
+        </tbody>
+    </table>
+
+
+</div>
+
+<div class="results_Weather">
+
+    <div class="ui inverted blue raised segment">
+        <table class="ui celled padded table">
+            <tbody>
+            <tr>
+                <td>
+                    Temperature
+                </td>
+                <td>
+                    <h3 class="ui center aligned header">{{ weather_data.weather_Temperature }}°C</h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Status
+                </td>
+                <td>
+                    <h3 class="ui center aligned header">{{ weather_data.weather_Status }}</h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Wind
+                </td>
+                <td>
+                    <h3 class="ui center aligned header">{{ weather_data.weather_Wind }}mph</h3>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
